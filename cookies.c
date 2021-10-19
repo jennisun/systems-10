@@ -51,14 +51,13 @@ struct cookies * remove_cookies(struct cookies *front, char *t, int n) {
     return temp;
   }
 
-  while (temp -> next) {
+  while (temp) {
     if (!strcmp(temp -> type, t) && temp -> num == n) {
       front -> next = temp -> next;
       break;
     }
     front = temp;
     temp = temp -> next;
-
   }
   return start;
 }
